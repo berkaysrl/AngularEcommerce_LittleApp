@@ -1,0 +1,29 @@
+<section id="product">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="row mt-3">
+                    <div class="col-lg-3 pt-1" *ngFor="let product of productList">
+                        <div class="box-shadow">
+                            <div class="card">
+                                <img class="" style="margin-top:30px;height: 250px;" [src]="product.productImageUrl" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.productName}}</h5>
+                                    <strong><p class="card-text"><span
+                                            class="text-danger fw-semibold me-2">${{product.productPrice-product.productPrice/100*35}}</span><del> ${{product.productPrice}}</del>
+                                        <span class="text-success ms-2">{{discount_amount}}%</span></p></strong>
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-sm btn-success" (click)="addItemToCart(product.productId)"> Add To Cart</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
